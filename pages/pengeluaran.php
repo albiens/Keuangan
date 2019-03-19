@@ -49,7 +49,7 @@ if(!isset($_COOKIE["akun"])) {
             <table>
 
                     <div class="input-group">
-                        <input class="input--style-3" type="text" placeholder="Nama Barang" name="nama">
+                        <input class="input--style-3" type="text" placeholder="Nama Pengeluaran" name="nama">
                     </div>
 
                     
