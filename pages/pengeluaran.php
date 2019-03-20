@@ -31,7 +31,8 @@
 
 <?php
 if(!isset($_COOKIE["akun"])) {
-    echo "You're not authorized!";
+    echo "You're not authorized! " ;
+    header( "refresh:1;url=../index.php" );
 ?>
 
 <?php

@@ -10,9 +10,11 @@
   <script src="../lib/jquery.dataTables.min.js"></script>
   <script src="../lib/dataTables.bootstrap.min.js"></script>
 </head>
+
 <?php
 if(!isset($_COOKIE["akun"])) {
-    echo "You're not authorized!";
+    echo "You're not authorized! " ;
+    header( "refresh:1;url=../index.php" );
 ?>
 
 <?php
