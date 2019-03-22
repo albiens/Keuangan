@@ -46,7 +46,7 @@
                     <span class="login100-form-title p-b-34 p-t-27">
 						Log in
 					</span>
-        <form action="../phpscript/proseslogin.php" method="post">
+        	<form action="../phpscript/proseslogin.php" method="post">
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="username" placeholder="Username">
 		            <span class="focus-input100" data-placeholder="&#xf207;"></span>

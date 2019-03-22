@@ -47,6 +47,7 @@ if(!isset($_COOKIE["akun"])) {
 			</tbody>
         <tfoot>
         <button  type="button" onclick="window.location.href='../pages/homeowner.php'" >Home</button>
+        <button  type="button" onclick="window.location.href='../phpscript/export_excel.php'" >Export Excel</button>
         <br>
         <br>
         </tfoot>
@@ -54,6 +55,7 @@ if(!isset($_COOKIE["akun"])) {
 		</table>
 	</div>
 </body>
+
 <?php  
 }
 ?>

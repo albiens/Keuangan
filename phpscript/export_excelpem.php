@@ -1,30 +1,11 @@
-<!DOCTYPE html>
 <html>
-
-<head>
-
-<link rel="stylesheet" href="../lib/bootstrap.min.css" />
-  <link rel="stylesheet" href="../lib/dataTables.bootstrap.min.css" />
-  
-  <script src="../lib/jquery-3.1.0.js"></script>
-  <script src="../lib/jquery.dataTables.min.js"></script>
-  <script src="../lib/dataTables.bootstrap.min.js"></script>
-</head>
-
-<?php
-if(!isset($_COOKIE["akun"])) {
-    echo "You're not authorized! " ;
-    header( "refresh:1;url=../index.php" );
-?>
-
-<?php
-}else{
-?>
-
 <body>
-
+<?php
+	header("Content-type: application/vnd-ms-excel");
+	header("Content-Disposition: attachment; filename=pemasukan.xls");
+?>
 	<center>
-		<h1>Daftar Pengeluaran PT Mitra Kinerja Utama</h1>
+		<h1>Daftar Pemasukan PT Mitra Kinerja Utama</h1>
 	</center>
 	<br/>
 	<br/>
@@ -44,7 +25,7 @@ if(!isset($_COOKIE["akun"])) {
         <?php
           session_start();
           require_once("../phpscript/koneksi.php");
-          $sql = "SELECT id, nama, tanggal , jumlah FROM pengeluaran";
+          $sql = "SELECT id, nama, tanggal , jumlah FROM pemasukan";
           $result = $conn->query($sql);
                       if ($result->num_rows > 0) {
               while($row = $result->fetch_assoc()) {
@@ -62,28 +43,8 @@ if(!isset($_COOKIE["akun"])) {
           }
         ?>
 			</tbody>
-      <tfoot>
-        <button  type="button" onclick="window.location.href='../pages/homeowner.php'" >Home</button>
-        <button  type="button" onclick="window.location.href='../phpscript/export_excelpeng.php'" >Export Excel</button>
-        <br>
-        <br>
-        </tfoot>
 		</table>
     
 	</div>
-</body>
-
-<?php  
-}
-?>
-
-</html>
-
-<script>
-  $(document).ready(function(){
-    $('#tabelku').DataTable();
-});
-</script>
-
-</body>
+</body> 
 </html>
