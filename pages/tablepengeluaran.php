@@ -68,13 +68,13 @@ if(!isset($_COOKIE["akun"])) {
                     <td>" . $row["nama"] . "</td>
                     <td>" . $row["tanggal"] . "</td>
                     <td>" . $row["jumlah"] . "</td>
-                    <td><img src='../bon_pengeluaran/".$row["foto"]."' width='100' height='100'></td>
                     <td>            
                       <form action='' method='post'>          
                         <input type='text' name='id_pem' value=" . $row["id"] ." hidden>
                         <input type='submit' name= 'del' value='delete' />
                       </form>      
-                      <a href='../pages/editpengeluaran.php?id=$row[id]'> <button>Update</button> </a>                
+                      <a href='../pages/editpengeluaran.php?id=$row[id]'> <button>Update</button> </a><br>
+                      <a href='../pages/detail_pen.php?id=$row[id]'> <button>detail</button> </a>                 
                     </td>
                   </tr>";
               }

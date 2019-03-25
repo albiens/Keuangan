@@ -38,7 +38,7 @@ if(!isset($_COOKIE["akun"])) {
                   <th>Nama Produk</th>
                   <th>Tanggal</th>
                   <th>Harga</th>
-                  <th>Bon</th>
+                  <th>Aksi</th>
                 </tr>
 			    </thead>
 			<tbody>    
@@ -55,7 +55,7 @@ if(!isset($_COOKIE["akun"])) {
                     <td>" . $row["nama"] . "</td>
                     <td>" . $row["tanggal"] . "</td>
                     <td>" . $row["jumlah"] . "</td>
-                    <td><img src='../bon_pengeluaran/".$row["foto"]."' width='100' height='100'></td>
+                    <td> <a href='../pages/detailpen_own.php?id=$row[id]'> <button>detail</button> </a></td>
                   </tr>";
               }
               echo "</table>";
