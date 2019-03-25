@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Edit Data</title>
+<title>Edit Data</title>
   <!-- Icons font CSS-->
   <link href="../lib/colorlib-regform-3/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="../lib/colorlib-regform-3/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -13,7 +13,6 @@
     <!-- Main CSS-->
     <link href="../lib/colorlib-regform-3/css/main.css" rel="stylesheet" media="all">
 
-    </head>
 </head>
 
 <?php
@@ -44,7 +43,7 @@ if(!isset($_COOKIE["akun"])) {
   $data = mysqli_fetch_array($sql);
   ?>
   
-  <form method="post" action="../phpscript/editpengeluaran.php">
+  <form method="post" action="../phpscript/editpengeluaran.php" enctype="multipart/form-data">
   <div class="input-group">
     <td><input class="input--style-3" type="hidden" name="id" value="<?php echo $data['id']; ?>"></td>
   </div>
@@ -57,6 +56,12 @@ if(!isset($_COOKIE["akun"])) {
   <div class="input-group">
     <td><input class="input--style-3" type="number" placeholder="Harga" name="jumlah" value = "<?php echo $data['jumlah']; ?>"></td>
   </div>
+  <td>
+      <input type="checkbox" name="ubah_foto" value="true" style="width:30px;"> <span style="color:white;">Ceklis jika ingin mengubah bon</span>
+      <div class="input-group">
+                        <input class="input--style-3" type="file"  name="foto">
+      </div>
+    </td>
   
   <div class="p-t-10">
                         <button class="btn btn--pill btn--green" type="submit" value="update">Update</button>

@@ -46,7 +46,7 @@ if(!isset($_COOKIE["akun"])) {
                 <div class="card-heading"></div>
                     <div class="card-body">
                         <h2 class="title">Form Pengeluaran</h2>
-            <form action="../phpscript/prosesPengeluaran.php" method="post">
+            <form action="../phpscript/prosesPengeluaran.php" method="post" enctype="multipart/form-data" >
             <table>
 
                     <div class="input-group">
@@ -60,6 +60,10 @@ if(!isset($_COOKIE["akun"])) {
 
                     <div class="input-group">
                         <input class="input--style-3" type="number" placeholder="Harga" name="jumlah">
+                    </div>
+
+                    <div class="input-group">
+                        <input class="input--style-3" type="file"  name="foto">
                     </div>
 
                     <div class="p-t-10">

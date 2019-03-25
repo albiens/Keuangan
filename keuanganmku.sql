@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2019 at 07:17 AM
+-- Generation Time: Mar 25, 2019 at 05:32 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -53,7 +53,8 @@ INSERT INTO `pegawai` (`id`, `username`, `password`, `level`, `nama`, `alamat`, 
 (11, 'new', 'new', 'direktur', 'spidol', 'jln dago no 109', 'asdasd@gmail.com', 'asda'),
 (13, 'kuro', '123', 'owner', 'kuroneko', 'isekai', 'kuro@gmail.com', '081212397265'),
 (14, 'admin', '123', 'admin', 'nicky', 'pasko', 'fulturejaro@gmail.com', '081212397265'),
-(15, 'direktur', '123', 'direktur', 'nicky', 'pasko', 'fulturejaro@gmail.com', '081212397265');
+(15, 'direktur', '123', 'direktur', 'nicky', 'pasko', 'fulturejaro@gmail.com', '081212397265'),
+(16, 'masagi', 'asd', 'direktur', 'masagi', 'asd', 'asd@gmail.com', '0861234644544');
 
 -- --------------------------------------------------------
 
@@ -65,20 +66,28 @@ CREATE TABLE `pemasukan` (
   `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `tanggal` date NOT NULL,
-  `jumlah` int(255) NOT NULL
+  `jumlah` int(255) NOT NULL,
+  `foto` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pemasukan`
 --
 
-INSERT INTO `pemasukan` (`id`, `nama`, `tanggal`, `jumlah`) VALUES
-(3, 'website masagi asd', '2018-09-16', 3500000),
-(4, 'website', '2019-01-17', 3800000),
-(5, 'website 2', '2019-01-17', 3800000),
-(6, 'website 3', '2019-03-19', 3000000),
-(7, 'hashire', '2019-03-22', 3200000),
-(8, 'Padoru Padoru', '2019-03-22', 3200000);
+INSERT INTO `pemasukan` (`id`, `nama`, `tanggal`, `jumlah`, `foto`) VALUES
+(3, 'website masagi asd', '2018-09-16', 3500000, ''),
+(4, 'website', '2019-01-17', 3800000, ''),
+(5, 'website 2', '2019-01-17', 3800000, ''),
+(6, 'website 3', '2019-03-19', 3000000, ''),
+(7, 'hashire', '2019-03-22', 3200000, ''),
+(8, 'Padoru Padoru', '2019-03-22', 3200000, ''),
+(9, 'indofood', '2019-03-19', 2000000, ''),
+(10, 'asd', '2019-03-14', 35000000, ''),
+(11, 'spidol merah', '2019-03-27', 3000000, ''),
+(13, 'hasagi website', '2019-03-20', 300000000, ''),
+(14, 'website 4', '2019-03-19', 30000, ''),
+(15, 'website asd', '2019-04-01', 35000000, ''),
+(20, 'test file', '2019-03-04', 200000, 'alpukat.jpg');
 
 -- --------------------------------------------------------
 
@@ -90,18 +99,22 @@ CREATE TABLE `pengeluaran` (
   `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `tanggal` date NOT NULL,
-  `jumlah` int(255) NOT NULL
+  `jumlah` int(255) NOT NULL,
+  `foto` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pengeluaran`
 --
 
-INSERT INTO `pengeluaran` (`id`, `nama`, `tanggal`, `jumlah`) VALUES
-(5, 'kerang', '2019-03-13', 300000),
-(6, 'dadu', '2019-03-04', 300000),
-(7, 'umu', '2019-03-19', 300000),
-(8, 'umu', '2019-03-19', 300000);
+INSERT INTO `pengeluaran` (`id`, `nama`, `tanggal`, `jumlah`, `foto`) VALUES
+(5, 'kerang', '2019-03-13', 300000, ''),
+(6, 'dadu', '2019-03-04', 300000, ''),
+(7, 'umu', '2019-03-19', 300000, ''),
+(8, 'umu', '2019-03-19', 300000, ''),
+(9, 'meja', '2019-03-19', 700000, ''),
+(10, 'komputer', '2019-04-01', 5000000, ''),
+(11, 'test file', '2019-03-05', 30000, 'apel.jpg');
 
 -- --------------------------------------------------------
 
@@ -237,19 +250,19 @@ ALTER TABLE `pengeluaran`
 -- AUTO_INCREMENT for table `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `pemasukan`
 --
 ALTER TABLE `pemasukan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `pengeluaran`
 --
 ALTER TABLE `pengeluaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -17,5 +17,6 @@ if($username = $user && $password = $pass){
     include "level.php";
 }else{
     echo "password/username salah";
+    header( "refresh:1;url=../index.php" );
 }
 ?>

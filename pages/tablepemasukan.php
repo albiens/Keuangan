@@ -53,6 +53,7 @@ if(!isset($_COOKIE["akun"])) {
                   <th>Nama Produk</th>
                   <th>Tanggal</th>
                   <th>Harga</th>
+                  <th>Bon</th>
                   <th>Aksi</th>
                 </tr>
 			    </thead>
@@ -60,7 +61,7 @@ if(!isset($_COOKIE["akun"])) {
         <?php
           session_start();
           require_once("../phpscript/koneksi.php");
-          $sql = "SELECT id, nama, tanggal , jumlah FROM pemasukan";
+          $sql = "SELECT * FROM pemasukan";
           $result = $conn->query($sql);
                       if ($result->num_rows > 0) {
               while($row = $result->fetch_assoc()) {
@@ -70,6 +71,7 @@ if(!isset($_COOKIE["akun"])) {
                     <td>" . $row["nama"] . "</td>
                     <td>" . $row["tanggal"] . "</td>
                     <td>" . $row["jumlah"] . "</td>
+                    <td><img src='../bon_pemasukan/".$row["foto"]."' width='100' height='100'></td>
                     <td>            
                       <form action='' method='post'>          
                         <input type='text' name='id_pem' value=" . $row["id"] ." hidden>
